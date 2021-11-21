@@ -1,0 +1,22 @@
+- name: lesson12-app1
+  gather_facts: false
+  hosts: [all]
+
+  tasks:
+    # Clone docker tomcat tutorial docker
+    - git:
+        repo: https://github.com/softwareyoga/docker-tomcat-tutorial.git
+        dest: /home/ubuntu/docker-tomcat-tutorial
+    - name: Build a Container Image
+      docker_image:
+        name: docker-tomcat-tutorial
+        source: build  
+        build:         
+          path: /home/ubuntu/docker-tomcat-tutorial
+    - name: Create and Run a Data Container
+      docker_container:
+        name: docker-tomcat-tutorial
+        image: docker-tomcat-tutorial
+        state: started
+        ports:
+          - "80:8080"
