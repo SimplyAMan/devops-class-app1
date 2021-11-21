@@ -1,11 +1,7 @@
 name: 'Ansible'
 
 on:
-  workflow_run:
-    workflows:
-      - docker
-    types: 
-      - completed
+  push:
     branches:
       - master
     
