@@ -1,4 +1,5 @@
 - name: lesson12-app1
+  become: yes
   gather_facts: false
   hosts: [all]
 
@@ -10,7 +11,7 @@
     - name: Build a Container Image
       docker_image:
         name: docker-tomcat-tutorial
-        source: build  
+        source: build
         build:         
           path: /home/ubuntu/docker-tomcat-tutorial
     - name: Create and Run a Data Container
