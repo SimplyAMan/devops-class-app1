@@ -1,0 +1,1 @@
+The purpose of this repository is to clone repository with sample.war (https://github.com/softwareyoga/docker-tomcat-tutorial) and deploy the war to Tomcat. And all this has to be done with Ansible.
